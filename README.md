@@ -1,4 +1,4 @@
-# Insert a record into a database tabe
+# Delete data from a database tabe
 
 1. Read documentation at Joomla documentation site https://docs.joomla.org/Inserting,_Updating_and_Removing_data_using_JDatabase#Inserting_a_Record
 
