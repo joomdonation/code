@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install SYSTEM "http://dev.joomla.org/xml/1.5/component-install.dtd">
+<extension type="component" version="2.5.0" method="upgrade">
+	<name>Code</name>
+	<creationDate>14.08.2016</creationDate>
+	<author>Tuan Pham Ngoc</author>
+	<authorEmail>tuanpn@joomdonation.com</authorEmail>
+	<authorUrl>http://www.joomdonation.com</authorUrl>
+	<copyright>Copyright (C) 2014 Ossolution Team</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<version>1.0.0</version>
+	<description>A sample component used to show you how to use common Joomal Libaries while developing Joomla extension</description>
+	<scriptfile>install.code.php</scriptfile>
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.code.sql</file>
+		</sql>
+	</install>
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.code.sql</file>
+		</sql>
+	</uninstall>	  
+	<administration>
+		<menu>Code</menu>		
+		<files folder="admin">
+			<folder>sql</folder>							
+			<folder>table</folder>							
+			<filename>code.php</filename>							
+		</files>
+		<languages folder="admin">
+			<language tag="en-GB">languages/en-GB/en-GB.com_code.ini</language>
+			<language tag="en-GB">languages/en-GB/en-GB.com_code.sys.ini</language>
+		</languages>
+	</administration>
+</extension>
