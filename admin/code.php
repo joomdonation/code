@@ -11,4 +11,25 @@
 // no direct access
 defined('_JEXEC') or die;
 
-echo 'Hello Worlds !';
+$db    = JFactory::getDbo();
+$query = $db->getQuery(true);
+
+$query->delete('#__code_categories')
+	->where('id = 1');
+$db->setQuery($query);
+$db->execute();
+echo '<pre>' . $db->getQuery() . '</pre>';
+
+$query->clear()
+	->delete('#__code_categories')
+	->where('name = ' . $db->quote('Components'));
+$db->setQuery($query);
+$db->execute();
+echo '<pre>' . $db->getQuery() . '</pre>';
+
+$query->clear()
+	->delete('#__code_categories')
+	->where('ind IN (1, )');
+$db->setQuery($query);
+$db->execute();
+echo '<pre>' . $db->getQuery() . '</pre>';
