@@ -13,4 +13,33 @@ $query->select('a.*, b.title AS category_title')
 	->order('a.ordering');
 $db->setQuery($query);
 $rows = $db->loadObjectList();
+for ($i = 0, $n = count($rows); $i < $n; $i++)
+{
+	$row = $rows[$i];
+	// Do something with this record, for example echo $row->id;
+}	
+```
+
+## $db->loadObject()
+Sử dụng method này khi ta cần lấy về 1 record duy nhất từ SELECT command. Chẳng hạn lấy về dữ liệu của category với ID = 2
+
+```php
+$query->clear()
+	->select('id, title, description')
+	->from('#__code_categories')
+	->where('id = 1');
+$db->setQuery($query);
+$row = $db->loadObject();
+// Do something with this record, for example echo $row->id.':'.$row->title;
+```
+Câu lệnh trên tương đương với 
+```php
+$query->clear()
+	->select('id, title, description')
+	->from('#__code_categories')
+	->where('id = 1');
+$db->setQuery($query);
+$rows = $db->loadObjectList();
+$row = $rows[0];
+// Do something with this record, for example echo $row->id.':'.$row->title;
 ```
