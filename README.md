@@ -1,3 +1,13 @@
-# Basic component structure
+# Common Form inputs
 
-This branch show you a very basic component structure. When you install the component and access to Components => Code menu item in the backend, you will just see a string Hello Worlds !
+This branch contains sample code to generate form input for Joomla Extensions like
+
+## Select List
+
+## Date Picker
+
+## File Upload
+
+## HTML editor
+
+## Boolean (Yes/No select)
