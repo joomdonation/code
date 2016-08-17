@@ -65,3 +65,30 @@ $db->setQuery($query);
 $categoryTitle = $db->loadResult();
 echo 'Title of category with ID = 1: ' . $categoryTitle;
 ```
+
+## $db->loadColumn()
+Method này được sử dụng khi câu truy vấn chỉ lấy về 1 field. Method này sẽ trả về một mảng bao gòm giá trị của các field đó, chảng hạng lấy về danh sách các IDs trong bảng #__code_categories, lấy về danh sách các title trong bảng #__categories.... Method này gần giống với $db->loadObjectList()
+
+```php
+$query->clear()
+	->select('id')
+	->from('#__code_categories');
+$db->setQuery($query);
+$categoryIds = $db->loadColumn();
+
+foreach($categoryIds as categoryId)
+{
+     echo $categoryId.'<br/>';
+}
+
+$query->clear()
+	->select('title')
+	->from('#__code_categories');
+$db->setQuery($query);
+$categoryTitles = $db->loadColumn();
+
+foreach($categoryTitles as $categoryTitle)
+{
+     echo $categoryTitle.'<br/>';
+}
+```
