@@ -10,6 +10,9 @@
 
 // no direct access
 defined('_JEXEC') or die;
+require_once JPATH_COMPONENT .'/table/category.php';
+require_once JPATH_COMPONENT .'/table/item.php';
+
 
 echo '<h2>JTable Method</h2>';
 
